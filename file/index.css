@@ -1,0 +1,61 @@
+li a{
+	font-family:"Arial Black",Gadget,sans-serif;
+	font-size:20px;
+	padding:5px;
+}
+li a:link{
+	color:gray;
+	text-decoration:none;
+}
+a:visited{
+	color:gray;
+	text-decoration:none;
+}
+li a:hover{
+	color:black;
+	text-decoration:underline;
+	background-color: #B3B3B3;
+}
+li a:active{
+	color:black;
+	text-decoration:none;
+}
+hr{
+	border:1px solid #a1a1a1;
+	width:100%;
+	max-width:800px;
+}
+ul {
+	margin: 6px auto;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:0px;
+	padding-right:0px;
+	width:100%;
+	max-width:550px;
+	list-style-type: none;
+        overflow: hidden;
+	background-color: #CFD0CF;
+	border-top: 5px solid #757575;
+	border-bottom: 5px solid #757575;
+	border-radius: 10px;
+}
+li{
+	display:inline;
+}
+header,nav,footer{
+	text-align:center;
+}
+.iframe-container {
+	position: relative;
+	padding-bottom: 80%; /* 16:9 */
+	height: 0;
+}
+.iframe-container iframe {
+	border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

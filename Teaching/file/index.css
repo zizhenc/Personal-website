@@ -1,0 +1,24 @@
+img{
+	float:right;
+	width:35%;
+}
+h1,h2{
+	font-family:Georgia;
+	color:gray;
+}
+h1{
+	text-align:center;
+}
+hr{
+	width:100%;
+	max-width:800px;
+}
+p{
+	text-indent: 30px;
+}
+article{
+	position:relative;
+	width:100%;
+	max-width:850px;
+	margin:0px auto;
+}
