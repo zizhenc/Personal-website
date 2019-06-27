@@ -1,0 +1,21 @@
+h1{
+	font-family:Georgia;
+	color:gray;
+}
+#selfie{
+	float: right;
+	width:40%;
+}
+hr{
+	width:100%;
+	max-width:800px;
+}
+article{
+	position:relative;
+	width:100%;
+	max-width:850px;
+	margin:0px auto;
+}
+p{
+	margin-left:2em;
+}
