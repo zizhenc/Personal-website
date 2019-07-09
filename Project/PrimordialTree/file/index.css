@@ -1,0 +1,10 @@
+section,footer,aside,header{
+	text-align:center;
+}
+h1{
+	color:grey;
+}
+hr{
+	width:100%;
+	max-width:800px;
+}

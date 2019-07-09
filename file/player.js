@@ -7,7 +7,7 @@ class Player{
     this.track=[];
   }
   load(){
-    let base=['Ballad of Starry Sky.mp3','Irony.mp3','Letter Song.mp3','Time after time.mp3','Yuuhi Saka.mp3','Kizuna.mp3','Naruto.mp3','Whiteeeen.mp3'];
+    let base=['Ballad of Starry Sky.mp3','Irony.mp3','Time after time.mp3','Yuuhi Saka.mp3','Slayers.mp3','Whiteeeen.mp3'];
     for(let i in base)
       this.track.push(loadSound('audio/'+base[i]));
     this.song=this.track[floor(random(this.track.length))];

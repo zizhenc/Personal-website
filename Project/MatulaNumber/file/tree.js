@@ -2,10 +2,10 @@ class Tree {
   constructor(n) {
     this.root=new Vertex(n, 0);
     this.traverse(this.root,node=>{
-    				    let factor=this.primeFactors(node.value);
-				    for (let i in factor)
-				      node.child.push(new Vertex(this.primeIndex(factor[i]), factor[i]));
-				  });
+      let factor=this.primeFactors(node.value);
+      for (let i in factor)
+	node.child.push(new Vertex(this.primeIndex(factor[i]), factor[i]));
+    });
     this.leftSide=this.rightSide=this.topSide=this.bottomSide=null;
     this.width=this.height=0;
   }
@@ -13,23 +13,23 @@ class Tree {
     this.drawEdges(this.root);
     this.root.display(x,y);
     this.traverse(this.root,node=>{
-    				    if(this.leftSide==null)
-				      this.leftSide=node.x;
-				    else if(this.leftSide>node.x)
-				      this.leftSide=node.x;
-				    if(this.rightSide==null)
-				      this.rightSide=node.x;
-				    else if(this.rightSide<node.x)
-				      this.rightSide=node.x;
-				    if(this.topSide==null)
-				      this.topSide=node.y;
-				    else if(this.topSide>node.y)
-				      this.topSide=node.y;
-			            if(this.bottomSide==null)
-				      this.bottomSide=node.y;
-				    else if(this.bottomSide<node.y)
-				      this.bottomSide=node.y;
-    				   });
+      if(this.leftSide==null)
+	this.leftSide=node.x;
+      else if(this.leftSide>node.x)
+	this.leftSide=node.x;
+      if(this.rightSide==null)
+	this.rightSide=node.x;
+      else if(this.rightSide<node.x)
+	this.rightSide=node.x;
+      if(this.topSide==null)
+	this.topSide=node.y;
+      else if(this.topSide>node.y)
+	this.topSide=node.y;
+      if(this.bottomSide==null)
+	this.bottomSide=node.y;
+      else if(this.bottomSide<node.y)
+	this.bottomSide=node.y;
+    });
     this.width=this.rightSide-this.leftSide;
     this.height=this.bottomSide-this.topSide;
   }
