@@ -9,9 +9,9 @@ function setup(){
 	textAlign(CENTER,CENTER);
 }
 function draw(){
-	background(0);
+	background(255,240,245);
 	if(tree!=null){
-		tree.display(tree.width/2,50);
+		tree.display(width/2,50);
 	        if(tree.width>width||tree.height>height)
 			resizeCanvas(tree.width+100,tree.height+100);
 	}
@@ -25,7 +25,7 @@ function generate(){
 		tree=new Tree(n);
 }
 function randGenerate(){
-	tree=new Tree(round(random(1,99999)));
+	tree=new Tree(round(random(1,9999)));
 }
 function mouseDragged(){
         if(tree!=null)

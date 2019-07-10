@@ -34,19 +34,19 @@ class Tree {
     this.height=this.bottomSide-this.topSide;
   }
   drawEdges(node){
-    stroke(255, 255, 0);
+    stroke(0);
     for(let i in node.child){
       line(node.x,node.y,node.child[i].x,node.child[i].y);
       if(select('#factor').checked()){
         let x=(node.x+node.child[i].x)/2;
 	let y=(node.y+node.child[i].y)/2;
-	let offset=textWidth(node.child[i].factor);
+	let offset=textWidth(node.child[i].factor)/2+5;
 	if(x<node.x)
 	  x-=offset;
 	else
 	  x+=offset;
 	noStroke();
-	fill(0,255,0);
+	fill(75,0,130);
 	text(node.child[i].factor,x,y);
       }
       this.drawEdges(node.child[i]);

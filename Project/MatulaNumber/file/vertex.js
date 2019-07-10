@@ -12,11 +12,11 @@ class Vertex {
       this.x=x;
       this.y=y;
     }
-    stroke(255, 255, 0);
-    fill(0);
+    stroke(0);
+    fill(255,255,224);
     circle(this.x, this.y, this.diameter);
     noStroke();
-    fill(255, 255, 0);
+    fill(0);
     text(this.value, this.x, this.y);
     let angle=PI/(this.child.length+1);
     for (let i in this.child)

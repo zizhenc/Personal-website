@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Matula Number</title>
+		<title>Primordial Constellation</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="file/index.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
@@ -9,22 +9,24 @@
 	</head>
 	<body>
 		<header>
-			<h1>Matula Number Generator</h1>
+			<h1>Primordial Constellation Display</h1>
 		</header>
 		<section>
-			Natural number: <input type="text" name="N" id="input">	
+			Amount: <input type="text" name="N" id="input">	
 			<input type="submit" value="Generate" id="commit">
 			<input type="submit" value="Random" id="randcommit">
-			<button type="reset" id="reformat">Reformat</button>
 			<button type="button" id="capture">Screenshot</button>
-			<input type="checkbox" name="factor" id="factor">
-			<label for="factor">Factor</label>
+			<input type="checkbox" name="edge" id="edge" checked>
+			<label for="edge">Edge</label>
+			<select>
+				<option value="straight" selected>Straight</option>
+			    	<option value="curve">Curve</option>
+			</select>
 			<div id="canvas"></div>
 		</section>
 		<aside>
-			(If the format is not perfect, please use mouse to drag.)
 			<p>
-				The &ldquo;Random&rdquo; button would generate Matula Number of the root of a random natural number in the range [1,100000000).
+				The &ldquo;Random&rdquo; button would generate random number of constellations in the range [1,1000).
 			</p>
 		</aside>
 		<footer>
@@ -32,7 +34,9 @@
 			The web application was written by Zizhen Chen (Z) &copy; on 7/3/2019
 		</footer>
 		<script src="file/vertex.js"></script>
+		<script src="file/edge.js"></script>
 	        <script src="file/tree.js"></script>
+		<script src="file/sphere.js"></script>
 		<script src="file/index.js"></script>
 	</body>
 </html>
