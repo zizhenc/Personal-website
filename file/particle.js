@@ -29,16 +29,6 @@ class Particle{
 			this.i=-1;
 		if (this.x < 0)
 			this.i=1;
-		/*
-		if(this.x>width/2-100-this.r&&this.y>height/2-12&&this.y<height/2+12)
-			this.i=-1;
-		if(this.x<width/2+100+this.r&&this.y>height/2-12&&this.y<height/2+12)
-			this.i=1;
-		if(this.y > height/2-12-this.r&&this.x>width/2-100&&this.x<width/2+100)
-			this.j=1;
-		if(this.y < height/2+12+this.r&&this.x>width/2-100&&this.x<width/2+100)
-			this.j=-1;
-		*/
 	}
 	display(){
 		stroke(this.c);

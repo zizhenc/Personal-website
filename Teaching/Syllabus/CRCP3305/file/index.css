@@ -1,0 +1,21 @@
+h1, footer, #semester{
+    text-align: center;
+}
+caption{
+	font-size:1.5em;
+}
+table, th, td{
+    border: 1px solid black;    
+}
+hr{
+	width:100%;
+	max-width:800px;
+}
+table{
+    margin:auto;
+}
+iframe{
+    float: right;
+    border-style:none
+    width: 800px;
+}

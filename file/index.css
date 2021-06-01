@@ -1,7 +1,7 @@
 li a{
 	font-family:"Arial Black",Gadget,sans-serif;
-	font-size:20px;
-	padding:5px;
+	font-size:20em;
+	padding:5em;
 }
 li a:link{
 	color:gray;
@@ -21,24 +21,23 @@ li a:active{
 	text-decoration:none;
 }
 hr{
-	border:1px solid #a1a1a1;
 	width:100%;
-	max-width:800px;
+	max-width:800em;
 }
 ul {
-	margin: 6px auto;
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:0px;
-	padding-right:0px;
+	margin: 6em auto;
+	padding-top:5em;
+	padding-bottom:5em;
+	padding-left:0em;
+	padding-right:0em;
 	width:100%;
-	max-width:550px;
+	max-width:550em;
 	list-style-type: none;
         overflow: hidden;
 	background-color: #CFD0CF;
-	border-top: 5px solid #757575;
-	border-bottom: 5px solid #757575;
-	border-radius: 10px;
+	border-top: 5em solid #757575;
+	border-bottom: 5em solid #757575;
+	border-radius: 10em;
 }
 li{
 	display:inline;

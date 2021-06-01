@@ -26,8 +26,6 @@ class Triangle{
 	}
       }
     }
-    //for(let i in this.particle)
-    //	this.particle[i].update();
     pop();
   }
 }

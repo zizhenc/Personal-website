@@ -13,8 +13,8 @@ a:active{
 section{
 	position:relative;
 	width:100%;
-	max-width:850px;
-	margin:0px auto;
+	max-width:850em;
+	margin:0em auto;
 }
 #smu,#naruto{
 	display:block;
@@ -31,17 +31,17 @@ section{
 	left:4%;
 	top:26%;
 	width:19%;
-	max-width:160px;
+	max-width:160em;
 }
 #shadow{
 	position:absolute;
 	left:3.7%;
 	top:25.8%;
 	width:19.6%;
-	max-width:165px;
+	max-width:165em;
 	padding-top:21%;
 	background:#FFFFFF;
-	box-shadow: -10px 10px 5px #888888;
+	box-shadow: -10em 10em 5em #888888;
 }
 p, ul{
 	position:absolute;
@@ -49,17 +49,17 @@ p, ul{
 }
 ul{
 	top:50%;
-	left:0px;
+	left:0em;
 	list-style-type:circle;
 }
 p{
 	padding:2%;
 	top:45%;
 	left:26%;
-	box-shadow: -10px 10px 5px #888888;
+	box-shadow: -10em 10em 5em #888888;
 	color:#8A0808;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600em) {
   ul,p{
   	font-size:60%
   }

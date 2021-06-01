@@ -1,104 +1,103 @@
-class Player{
-  constructor(){
+class Player {
+  constructor() {
     this.position=0;
-    this.playGap=1;
-    this.nextGap=1;
     this.volume=0.5;
     this.track=[];
+    this.playerWidth=200;
+    this.playerHeight=24;
+    this.partWidth=this.playerWidth/6;
+    this.gap=this.playerHeight/40;
+    this.pushPlay=this.gap;
+    this.pushNext=this.gap;
   }
-  load(){
-    let base=['Ballad of Starry Sky.mp3','Irony.mp3','Time after time.mp3','Yuuhi Saka.mp3','Slayers.mp3','Whiteeeen.mp3'];
-    for(let i in base)
-      this.track.push(loadSound('audio/'+base[i]));
+  load() {
+    let base=['Irony.mp3', 'YuuhiSaka.mp3', 'Whiteeeen.mp3'];
+    for (let i of base)
+      this.track.push(loadSound('audio/'+i));
     this.song=this.track[floor(random(this.track.length))];
+    this.song.setVolume(this.volume);
   }
-  display(){
+  display() {
     push();
     rectMode(CENTER);
     noStroke();
-    fill(150);
-    rect(width/2,height/2,200,24,5);
+    fill(150, 200);
+    rect(width/2, height/2, this.playerWidth, this.playerHeight, 5);
     fill(255);
-    if(this.song.isPlaying()){
-      rectMode(CORNER);
-      rect(width/2-87,height/3+this.playGap,3,height/3-this.playGap*2);
-      rect(width/2-78-3,height/3+this.playGap,3,height/3-this.playGap*2);
-    }
-    else
-      triangle(width/2-88+this.playGap,height/3+this.playGap,width/2-88+this.playGap,height*2/3-this.playGap,width/2-77-this.playGap,height/2);
+    if (this.song.isPlaying()) {
+      rect(width/2-this.playerWidth/2+this.partWidth/3+this.partWidth/20+this.gap/2-this.pushPlay/2, height/2, this.partWidth/10-this.gap+this.pushPlay, this.playerHeight/2-2*this.gap+2*this.pushPlay);
+      rect(width/2-this.playerWidth/2+this.partWidth-this.partWidth/20-this.partWidth/3-this.gap/2+this.pushPlay/2, height/2, this.partWidth/10-this.gap+this.pushPlay, this.playerHeight/2-2*this.gap+2*this.pushPlay);
+    } else
+      triangle(width/2-this.playerWidth/2+this.partWidth/3+this.gap-this.pushPlay, height/2-this.playerHeight/4+this.gap-this.pushPlay, width/2-this.playerWidth/2+this.partWidth/3+this.gap-this.pushPlay, height/2+this.playerHeight/4-this.gap+this.pushPlay, width/2-this.playerWidth/2+this.partWidth-this.partWidth/3-this.gap+this.pushPlay, height/2);
     beginShape();
-    vertex(width/2+65-this.nextGap,height/2);
-    vertex(width/2+62-this.nextGap,height*3/7);
-    vertex(width/2+68+this.nextGap,height/2);
-    vertex(width/2+62-this.nextGap,height*4/7);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.gap+this.pushNext, height/2);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/4+this.gap-this.pushNext, height/2-this.playerHeight/6+this.gap-this.pushNext);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/7+this.gap-this.pushNext, height/2);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/4+this.gap-this.pushNext, height/2+this.playerHeight/6-this.gap+this.pushNext);
     endShape(CLOSE);
     beginShape();
-    vertex(width/2+59-this.nextGap,height/2);
-    vertex(width/2+56-this.nextGap,height*3/7);
-    vertex(width/2+62+this.nextGap,height/2);
-    vertex(width/2+56-this.nextGap,height*4/7);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/4-this.gap+this.pushNext, height/2);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/4-this.partWidth/4+this.gap-this.pushNext, height/2-this.playerHeight/6+this.gap-this.pushNext);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/7-this.partWidth/4+this.gap-this.pushNext, height/2);
+    vertex(width/2+this.playerWidth/2-this.partWidth-this.partWidth/4-this.partWidth/4+this.gap-this.pushNext, height/2+this.playerHeight/6-this.gap+this.pushNext);
     endShape(CLOSE);
-    textAlign(LEFT,CENTER);
-    if(this.song.isPlaying()){
+    textAlign(LEFT, CENTER);
+    if (this.song.isPlaying()) {
       let time=round(this.song.currentTime());
       let minute=int(time/60);
       let second=int((time/60-minute)*60);
-      text(minute+':'+(second<10?'0'+second:second),width/2+30,height/2);
-    }
-    else
-      text('- : --',width/2+30,height/2);  
+      text(minute+':'+(second<10?'0'+second:second), width/2+this.playerWidth/2-this.partWidth-1.4*this.partWidth, height/2);
+    } else
+      text('- : --', width/2+this.playerWidth/2-this.partWidth-1.4*this.partWidth, height/2);
     fill(200);
-    triangle(width/2+71,height*3/5,width/2+88,height*2/5,width/2+88,height*3/5);
+    triangle(width/2+this.playerWidth/2-this.partWidth+this.partWidth/4, height/2+this.playerHeight/5, width/2+this.playerWidth/2-this.partWidth/4, height/2-this.playerHeight/5, width/2+this.playerWidth/2-this.partWidth/4, height/2+this.playerHeight/5);
     fill(255);
-    triangle(width/2+71,height*3/5,width/2+71+this.volume*17,height*3/5-this.volume*height/5,width/2+71+this.volume*17,height*3/5);
+    triangle(width/2+this.playerWidth/2-this.partWidth+this.partWidth/4, height/2+this.playerHeight/5, width/2+this.playerWidth/2-this.partWidth+this.partWidth/4+this.volume*(this.partWidth/2), height/2+this.playerHeight/5, width/2+this.playerWidth/2-this.partWidth+this.partWidth/4+this.volume*(this.partWidth/2), height/2+this.playerHeight/5-2*this.playerHeight/5*this.volume*this.partWidth/this.partWidth);
     stroke(200);
     strokeWeight(4);
-    line(width/2-66,height/2,width/2+24,height/2);
+    line(width/2-this.playerWidth/2+1.1*this.partWidth, height/2, width/2+this.playerWidth/2-2.6*this.partWidth, height/2);
     stroke(255);
-    strokeWeight(8);
-    point(width/2-66+this.position,height/2);
-    if(this.song.isPlaying()){
-      this.position=this.song.currentTime()/this.song.duration()*90;
-      if(round(this.song.currentTime())==round(this.song.duration())){
+    strokeWeight(this.playerHeight/4);
+    point(width/2-this.playerWidth/2+1.1*this.partWidth+this.position*(this.playerWidth-3.7*this.partWidth), height/2);
+    if (this.song.isPlaying()) {
+      this.position=this.song.currentTime()/this.song.duration();
+      if (this.song.currentTime()>=this.song.duration()-1) {
+      	this.song.stop();
         this.song=this.track[floor(random(this.track.length))];
-	this.song.setVolume(this.volume);
-	this.song.play();
+        this.song.setVolume(this.volume);
+        this.song.play();
       }
     }
     pop();
   }
-  mousePress(){
-    if(mouseX>width/2-88&&mouseX<width/2-77&&mouseY>height/3&&mouseY<height*2/3)
-      this.playGap=2;
-    if(mouseX>width/2+56&&mouseX<width/2+68&&mouseY>height*3/7&&mouseY<height*4/7){
-      if(this.song.isPlaying())
-        this.song.stop();
-      this.nextGap=2;
+  mousePress() {
+    if (mouseX>=width/2-this.playerWidth/2+this.partWidth/3&&mouseX<=width/2-this.playerWidth/2+this.partWidth-this.partWidth/3&&mouseY>=height/2-this.playerHeight/4&&mouseY<=height/2+this.playerHeight/4)
+      this.pushPlay=0;
+    if (mouseX>=width/2+this.playerWidth/2-this.partWidth-this.partWidth/2&&mouseX<=width/2+this.playerWidth/2-this.partWidth&&mouseY>=height/2-this.playerHeight/6&&mouseY<=height/2+this.playerHeight/6)
+      this.pushNext=0;
+    if (mouseX>=width/2-this.playerWidth/2+1.1*this.partWidth&&mouseX<=width/2+this.playerWidth/2-2.6*this.partWidth&&mouseY<height/2+this.playerHeight/3&&mouseY>height/2-this.playerHeight/3) {
+      this.position=(mouseX-(width/2-this.playerWidth/2+1.1*this.partWidth))/(this.playerWidth-3.7*this.partWidth);
+      this.song.jump(floor(this.position*this.song.duration()));
     }
-    if(mouseX>=width/2+71&&mouseX<=width/2+88&&mouseY>height*2/5&&mouseY<height*3/5){
-      this.volume=(mouseX-width/2-71)/17;
+    if (mouseX>=width/2+this.playerWidth/2-this.partWidth+this.partWidth/4&&mouseX<=width/2+this.playerWidth/2-this.partWidth/4&&mouseY<=height/2+this.playerHeight/5&&mouseY>=height/2-this.playerHeight/5) {
+      this.volume=(mouseX-(width/2+this.playerWidth/2-this.partWidth+this.partWidth/4))*2/this.partWidth;
       this.song.setVolume(this.volume);
     }
-    /*
-    if(mouseX>=width/2-66&&mouseX<=width/2+24&&mouseY<height/2+4&&mouseY>height/2-4){
-      this.song.jump((mouseX-width/2+66)/90*this.song.duration());
-    */
   }
-  mouseRelease(){
-    if(this.nextGap==2){
+  mouseRelease() {
+    if (this.pushPlay==0) {
+      if (this.song.isPlaying())
+        this.song.pause();
+      else
+        this.song.play();
+      this.pushPlay=this.gap;
+    }
+    if (this.pushNext==0) {
+      this.song.stop();
       this.song=this.track[floor(random(this.track.length))];
       this.song.setVolume(this.volume);
       this.song.play();
-      this.nextGap=1;
-    }
-    if(this.playGap==2){
-      if(this.song.isPlaying())
-        this.song.pause();
-      else{
-        this.song.setVolume(this.volume);
-      	this.song.play();
-      }
-      this.playGap=1;
+      this.pushNext=this.gap;
     }
   }
 }
