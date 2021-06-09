@@ -11,7 +11,8 @@ class Player {
     this.pushNext=this.gap;
   }
   load() {
-    let base=['Irony.mp3', 'YuuhiSaka.mp3', 'Whiteeeen.mp3'];
+    soundFormats('mp3','ogg');
+    let base=['Irony', 'YuuhiSaka', 'Whiteeeen'];
     for (let i of base)
       this.track.push(loadSound('audio/'+i));
     this.song=this.track[floor(random(this.track.length))];

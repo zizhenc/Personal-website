@@ -1,7 +1,7 @@
 li a{
 	font-family:"Arial Black",Gadget,sans-serif;
-	font-size:20em;
-	padding:5em;
+	font-size:20px;
+	padding:5px;
 }
 li a:link{
 	color:gray;
@@ -22,22 +22,22 @@ li a:active{
 }
 hr{
 	width:100%;
-	max-width:800em;
+	max-width:800px;
 }
 ul {
-	margin: 6em auto;
-	padding-top:5em;
-	padding-bottom:5em;
-	padding-left:0em;
-	padding-right:0em;
+	margin: 6px auto;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:0px;
+	padding-right:0px;
 	width:100%;
-	max-width:550em;
+	max-width:550px;
 	list-style-type: none;
         overflow: hidden;
 	background-color: #CFD0CF;
-	border-top: 5em solid #757575;
-	border-bottom: 5em solid #757575;
-	border-radius: 10em;
+	border-top: 5px solid #757575;
+	border-bottom: 5px solid #757575;
+	border-radius: 10px;
 }
 li{
 	display:inline;
